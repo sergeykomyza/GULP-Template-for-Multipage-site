@@ -1,0 +1,79 @@
+@import 'blocks/fonts'
+@import 'blocks/vars'
+
+/* ===================================================================*/
+/* ====================================================== main styles */ 
+/*====================================================================*/
+*,
+p,
+h1,h2,h3,h4,h5,h6
+	box-sizing: border-box
+	margin: 0
+	padding: 0
+	line-height: normal
+
+html 
+	overflow-x: hidden
+
+body
+	font-family: $font-1
+	font-size: 18px
+	font-weight: 400
+	color: $black
+
+ul 
+	margin: 0
+	padding: 0
+	list-style: none
+
+a 
+	text-decoration: none
+	&:hover
+		text-decoration: none
+
+button 
+	background: transparent
+	border: none
+	outline: none
+	cursor: pointer
+	&:focus
+		outline: none
+
+input
+	outline: none
+
+section
+	position: relative
+
+// переопределить ширину контейнера bootstrap
+// .container
+// 	max-width: 1054px
+// 	position: relative
+// 	margin-left: auto
+// 	margin-right: auto
+// 	padding-right: 15px
+// 	padding-left: 15px
+
+.visible-992
+	display: none
+
+@media screen and ( max-width: 992px )
+	.visible-992
+		display: block
+	.hidden-992
+		display: none
+
+/* ============================================================= HEADER */
+@import 'blocks/header'
+/* ============================================================= SECTION */
+@import 'blocks/section1'
+/* ============================================================= SECTION */
+@import 'blocks/section2'
+/* ============================================================= SECTION */
+@import 'blocks/section3'
+/* ============================================================= SECTION */
+@import 'blocks/section4'
+/* ============================================================= SECTION */
+@import 'blocks/section5'
+/* ============================================================= FOOTER */
+@import 'blocks/footer'

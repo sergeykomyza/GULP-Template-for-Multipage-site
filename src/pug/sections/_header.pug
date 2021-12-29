@@ -1,0 +1,9 @@
+header.header
+	.container 
+		.row 
+			.col
+				.header__box
+					ul.header__menu.menu
+						each item, hrefs in {index:'Main Page', page2:'Page 2', page3:'Page 3',  page4:'Page 4', page5:'Page 5'}
+							li.menu__item
+								a.menu__link(href=""+ hrefs +".html")= '' + item
