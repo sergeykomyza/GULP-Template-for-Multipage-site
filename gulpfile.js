@@ -30,8 +30,8 @@ gulp.task('pug', function (callback) {
 });
 
 // Компиляция sass в css
-gulp.task('sass', function (callback) {
-    return gulp.src('./src/sass/*.sass')
+gulp.task('scss', function (callback) {
+    return gulp.src('./src/scss/*.scss')
         .pipe(plumber({
             errorHandler: notify.onError(function (err) {
                 return {
@@ -63,8 +63,8 @@ gulp.task('watch', function () {
     // watch('./src/sass/**/*.sass', gulp.parallel('sass'))
 
     // Запуск слежения и компиляции SCSS с задержкой, для жесктих дисков HDD
-	watch('./src/sass/**/*.sass', function(){
-		setTimeout( gulp.parallel('sass'), 1000 )
+	watch('./src/scss/**/*.scss', function(){
+		setTimeout( gulp.parallel('scss'), 1000 )
 	})
 
     // Слежение за PUG и сборка
@@ -124,7 +124,7 @@ gulp.task(
     'default',
     gulp.series(
         gulp.parallel('clean:build'),
-        gulp.parallel('sass', 'pug', 'copy:fonts', 'copy:img', 'copy:js', 'copy:css'),
+        gulp.parallel('scss', 'pug', 'copy:fonts', 'copy:img', 'copy:js', 'copy:css'),
         gulp.parallel('server', 'watch'),
     )
 );
