@@ -16,10 +16,8 @@ html{
 	overflow-x: hidden;
 }
 body{
-	font-family: $font-2;
-	font-size: 16px;
-	font-weight: 400;
-	color: $black;
+	font-family: 'Oswald', sans-serif;
+	font-size: 10px;
 }
 ul{
 	margin: 0;
@@ -49,28 +47,21 @@ section{
 	position: relative;
 }
 
-// переопределить ширину контейнера bootstrap
-// .container
-// 	max-width: 1054px
-// 	position: relative
-// 	margin-left: auto
-// 	margin-right: auto
-// 	padding-right: 15px
-// 	padding-left: 15px
-
-.visible-992{
+.mobile{
 	display: none;
 }
 
 @media screen and ( max-width: 992px ){
-	.visible-992{
+	.mobile{
 		display: block;
 	}
-	.hidden-992{
+	.desktop{
 		display: none;
 	}
 }
 
+/* ============================================================= TEMPLATES */
+@import 'blocks/templates';
 /* ============================================================= HEADER */
 @import 'blocks/header';
 /* ============================================================= SECTION */

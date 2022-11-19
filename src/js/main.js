@@ -4,14 +4,7 @@
 //     ...
 // }
 
-// ================================================== исключение по селектору
-const body = document.querySelector('body');
-if (!body.querySelector('.main-page')) {
-    body.style.padding = '300px 0 0 0';
-}
 
-// ================================================== ПЕРЕМЕННЫЕ
-const header = document.querySelector('.header')
 // ================================================== ПРОКРУТКА, ШАПКА
 document.addEventListener('DOMContentLoaded', function () {
     // СКРОЛЛ К НУЖНОЙ СЕКЦИИ ПО КЛИКУ НА ПУНКТАХ МЕНЮ
@@ -32,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // ================================================== МАСКА ДЛЯ ИНПУТОВ (https://github.com/RobinHerbots/Inputmask)
 $(document).ready(function () {
-    $(".phone").inputmask({
+    $(".js-maskPhone").inputmask({
         mask: "+7 999 999 99 99",
         clearIncomplete: true
     });
@@ -51,14 +44,14 @@ $(document).ready(function () {
     //         }
     //     }
     });
-    $(".date").inputmask({
+    $(".js-maskDate").inputmask({
         mask: "99/99/9999",
         clearIncomplete: true,
         'placeholder': 'dd/mm/yyyy'
     });
 });
 
-// ================================================== СЛАЙДЕРЫ (https://kenwheeler.github.io/slick/)
+// ================================================== СЛАЙДЕР SLICK (https://kenwheeler.github.io/slick/)
 document.addEventListener('DOMContentLoaded', function () {
     $('.slider').slick({
         fade: false,
@@ -95,7 +88,28 @@ document.addEventListener('DOMContentLoaded', function () {
     // });
 
 });
-// ================================================== 
+// ================================================== СЛАЙДЕР SWIPER (https://swiperjs.com/get-started) 
+const swiper = new Swiper('.swiper', {
+    // Optional parameters
+    direction: 'vertical',
+    loop: true,
+
+    // If we need pagination
+    pagination: {
+        el: '.swiper-pagination',
+    },
+
+    // Navigation arrows
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+
+    // And if we need scrollbar
+    scrollbar: {
+        el: '.swiper-scrollbar',
+    },
+});
 // ================================================== 
 // ================================================== 
 // ================================================== 
