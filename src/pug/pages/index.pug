@@ -37,11 +37,17 @@ html(lang="ru")
 			.index-page ul a:hover:after{
 				transform: scaleX(1);
 			}
+			.index-page ul a.completed{
+				color: green;
+			}
+			.index-page ul a.completed:after{
+				transform: scaleX(1);
+			}
 
 	-
 		menu = [
 			{title: 'Templates',  href: 'templates.html'},
-			{title: 'Главная',    href: 'home.html'},
+			{title: 'Главная',    href: 'home.html', completed: true},
 			{title: 'Страница 2', href: 'page2.html'},
 			{title: 'Страница 3', href: 'page3.html'},
 			{title: 'Страница 4', href: 'page4.html'}
@@ -54,6 +60,6 @@ html(lang="ru")
 			ul 
 				each item in menu 
 					li 
-						a(href="" + item.href target="_blank")= item.title
+						a(href="" + item.href target="_blank" class= item.completed === true ? 'completed' : '')= item.title
 
 
